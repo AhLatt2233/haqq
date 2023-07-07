@@ -1,4 +1,4 @@
-FROM golang:stretch AS build-env
+FROM golang:buster AS build-env
 
 WORKDIR /go/src/github.com/haqq-network/haqq
 
@@ -9,7 +9,7 @@ COPY . .
 
 RUN make build
 
-FROM golang:stretch
+FROM golang:buster
 
 RUN apt update
 RUN apt install ca-certificates jq -y
